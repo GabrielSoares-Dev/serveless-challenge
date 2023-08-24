@@ -50,6 +50,8 @@ Você pode encontrar a documentação completa da API no seguinte link do Postma
 
 [![Executar no Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/sua-colecao-aqui)
 
+
+
 ## Testes
 
 Para executar testes unitários e de integração utilizando o Jest, execute o seguinte comando:
