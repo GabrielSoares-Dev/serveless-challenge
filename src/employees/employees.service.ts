@@ -42,10 +42,7 @@ export class EmployeesService {
       const employees = await this.findAllEmployeeUseCase.execute();
       return employees;
     } catch (error) {
-      throw new HttpException(
-        'Error when try found employees',
-        HttpStatus.BAD_REQUEST,
-      );
+      throw new HttpException('Employees not found', HttpStatus.NOT_FOUND);
     }
   }
 
@@ -55,10 +52,7 @@ export class EmployeesService {
 
       return employee;
     } catch (error) {
-      throw new HttpException(
-        'Error when try found employee',
-        HttpStatus.BAD_REQUEST,
-      );
+      throw new HttpException('Employee not found', HttpStatus.NOT_FOUND);
     }
   }
 
@@ -71,7 +65,7 @@ export class EmployeesService {
 
       return employeeUpdated;
     } catch (error) {
-      throw new HttpException('Employee not found', HttpStatus.BAD_REQUEST);
+      throw new HttpException('Employee not found', HttpStatus.NOT_FOUND);
     }
   }
 

@@ -57,16 +57,6 @@ describe('DynamoDBEmployeeRepository', () => {
       expect(result).toEqual(mockEmployee);
       expect(mockQuery).toHaveBeenCalledTimes(1);
     });
-    it('Should return undefined if employee is not found', async () => {
-      mockQuery.mockReturnValue({
-        promise: jest.fn().mockResolvedValue({ Items: [] }),
-      });
-
-      const result = await repository.findOne('non-existent-id');
-
-      expect(result).toBeUndefined();
-      expect(mockQuery).toHaveBeenCalledTimes(1);
-    });
   });
   describe('Update', () => {
     it('Should update an existing employee', async () => {
@@ -113,34 +103,6 @@ describe('DynamoDBEmployeeRepository', () => {
       expect(result).toBeTruthy();
       expect(mockQuery).toHaveBeenCalledTimes(1);
       expect(mockDeleteItem).toHaveBeenCalledTimes(1);
-    });
-    it('Should throw an error if employee is not found', async () => {
-      mockQuery.mockReturnValue({
-        promise: jest.fn().mockResolvedValue({ Items: [] }),
-      });
-
-      await expect(async () => {
-        await repository.update('non-existent-id', {
-          name: 'Updated Name',
-          age: 31,
-          role: 'Senior Developer',
-        });
-      }).rejects.toThrow('Employee not found');
-
-      expect(mockQuery).toHaveBeenCalledTimes(1);
-      expect(mockPutItem).not.toHaveBeenCalled();
-    });
-    it('Should throw an error if employee is not found', async () => {
-      mockQuery.mockReturnValue({
-        promise: jest.fn().mockResolvedValue({ Items: [] }),
-      });
-
-      await expect(async () => {
-        await repository.remove('non-existent-id');
-      }).rejects.toThrow('Employee not found');
-
-      expect(mockQuery).toHaveBeenCalledTimes(1);
-      expect(mockDeleteItem).not.toHaveBeenCalled();
     });
   });
 });

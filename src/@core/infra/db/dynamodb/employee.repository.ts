@@ -40,7 +40,12 @@ export class DynamoDBEmployeeRepository implements EmployeeRepositoryInterface {
     };
 
     const result = await this.dynamoDbClient.scan(params).promise();
-    return result.Items as unknown as Employee[];
+    return result.Items.map((item) => ({
+      id: item.id.S,
+      role: item.role.S,
+      name: item.name.S,
+      age: parseInt(item.age.N),
+    })) as unknown as Employee[];
   }
 
   async findOne(id: string): Promise<Employee | undefined> {
@@ -56,7 +61,21 @@ export class DynamoDBEmployeeRepository implements EmployeeRepositoryInterface {
     };
 
     const result = await this.dynamoDbClient.query(params).promise();
-    return result.Items[0] as unknown as Employee | undefined;
+
+    const notFound = result.Items.length === 0;
+
+    if (!notFound) {
+      const employee = {
+        id: result.Items[0].id.S,
+        role: result.Items[0].role.S,
+        name: result.Items[0].name.S,
+        age: parseInt(result.Items[0].age.N),
+      };
+      return employee as unknown as Employee | undefined;
+    }
+    if (notFound) {
+      return undefined;
+    }
   }
 
   async update(
