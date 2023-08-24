@@ -1,4 +1,4 @@
-# API de Gerenciamento de Funcionários
+# Serveless Challenge
 
 Esta é uma API de Gerenciamento de Funcionários construída utilizando o framework NestJS e seguindo a Arquitetura Limpa. A API permite realizar operações de CRUD (Criar, Ler, Atualizar, Deletar) em registros de funcionários.
 
@@ -62,3 +62,7 @@ Para executar testes unitários e de integração utilizando o Jest, execute o s
 ```bash
 npm run test
 ```
+
+
+
+## By Gabriel Soares Maciel
