@@ -37,19 +37,19 @@ npm run start
 5. Para rodar no modo serverless primeiro configure as credenciais da aws
 
 ```bash
-serverless config credentials --provider aws --key sua_chave_de_acesso --secret sua_chave_de_acesso_secreta
+npx serverless config credentials --provider aws --key sua_chave_de_acesso --secret sua_chave_de_acesso_secreta
 ```
 
 6. Para rodar no modo offline
 
 ```bash
-serverless offline
+npx serverless offline
 ```
 
 7. Para realizar o deploy na sua AWS Lambda
 
 ```bash
-serverless deploy
+npx serverless deploy
 ```
 
 
