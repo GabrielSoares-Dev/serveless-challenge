@@ -34,6 +34,24 @@ Renomeie o arquivo `.env.example` para `.env` e preencha as variáveis de acordo
 npm run start
 ```
 
+5. Para rodar no modo serverless primeiro configure as credenciais da aws
+
+```bash
+serverless config credentials --provider aws --key sua_chave_de_acesso --secret sua_chave_de_acesso_secreta
+```
+
+6. Para rodar no modo offline
+
+```bash
+serverless offline
+```
+
+7. Para realizar o deploy na sua AWS Lambda
+
+```bash
+serverless deploy
+```
+
 
 O servidor estará rodando em http://localhost:3000.
 
