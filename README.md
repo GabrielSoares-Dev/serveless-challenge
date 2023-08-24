@@ -15,12 +15,14 @@ Esta é uma API de Gerenciamento de Funcionários construída utilizando o frame
 ```bash
 git clone https://github.com/GabrielSoares-Dev/serveless-challenge.git
 cd serveless-challenge
+```
 
 
 2. Instale as dependências do projeto:
 
 ```bash
 npm i
+```
 
 3. Configure as variáveis de ambiente:
 
@@ -30,6 +32,7 @@ Renomeie o arquivo `.env.example` para `.env` e preencha as variáveis de acordo
 
 ```bash
 npm run start
+```
 
 
 O servidor estará rodando em http://localhost:3000.
@@ -58,3 +61,4 @@ Para executar testes unitários e de integração utilizando o Jest, execute o s
 
 ```bash
 npm run test
+```
