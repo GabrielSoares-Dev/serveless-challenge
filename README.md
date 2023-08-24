@@ -62,7 +62,7 @@ A API possui os seguintes endpoints:
 - `POST /v1/employees`: Cria um novo funcionário.
 - `GET /v1/employees`: Retorna a lista de funcionários.
 - `GET /v1/employees/:id`: Retorna os detalhes de um funcionário específico.
-- `PUT /v1/employees/:id`: Atualiza os detalhes de um funcionário.
+- `PATCH /v1/employees/:id`: Atualiza os detalhes de um funcionário.
 - `DELETE /v1/employees/:id`: Remove um funcionário.
 
 ## Documentação
