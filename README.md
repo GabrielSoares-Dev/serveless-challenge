@@ -51,7 +51,7 @@ A API possui os seguintes endpoints:
 
 Você pode encontrar a documentação completa da API no seguinte link do Postman:
 
-[![Executar no Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/sua-colecao-aqui)
+[![Executar no Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/12430293/2s9Y5WwNyN#19463831-ce59-4e0b-9ab9-c2846b11aeec)
 
 
 
